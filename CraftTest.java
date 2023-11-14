@@ -70,6 +70,7 @@ public class CraftTest {
         System.out.println("Test 15 Pass: " + test15());
     }
 
+    // shapeless log successful craft
     public static boolean test1() {
         String[][] grid = { {
                 "Log", null, null
@@ -84,6 +85,7 @@ public class CraftTest {
         return craftPlanks != null && craftPlanks.name.equals("WoodPlank") && craftPlanks.count == 4;
     }
 
+    // shapeless log successful craft
     public static boolean test2() {
         String[][] grid = { {
                 null, null, null
@@ -97,6 +99,7 @@ public class CraftTest {
         return craftPlanks != null && craftPlanks.name.equals("WoodPlank") && craftPlanks.count == 4;
     }
 
+    // unknown recipe unsuccessful craft
     public static boolean test3() {
         String[][] grid = { {
                 null, null, null
@@ -110,6 +113,7 @@ public class CraftTest {
         return craftPlanks == null;
     }
 
+    // shapeless log unsuccessful craft (too many logs)
     public static boolean test4() {
         String[][] grid = { {
                 null, null, null
@@ -124,6 +128,7 @@ public class CraftTest {
         return craftPlanks == null;
     }
 
+    // shapeless stew successful craft
     public static boolean test5() {
         String[][] grid = { {
                 "MushBrown", null, null
@@ -138,6 +143,7 @@ public class CraftTest {
         return craftStew != null && craftStew.name.equals("MushStew");
     }
 
+    // shapeless stew unsuccessful craft (too many bowls)
     public static boolean test6() {
         String[][] grid = { {
                 "MushBrown", null, null
@@ -152,6 +158,7 @@ public class CraftTest {
         return craftStew == null;
     }
 
+    // shapeless stew unsuccessful craft (wrong item)
     public static boolean test7() {
         String[][] grid = { {
                 null, null, null
@@ -166,6 +173,7 @@ public class CraftTest {
         return craftStew == null;
     }
 
+    // shaped torch successful craft
     public static boolean test8() {
         String[][] grid = { {
                 "Coal", null, null
@@ -180,6 +188,7 @@ public class CraftTest {
         return craftTorch != null && craftTorch.name.equals("Torch");
     }
 
+    // shaped torch successful craft (non standard location)
     public static boolean test9() {
         String[][] grid = { {
                 null, null, null
@@ -194,6 +203,7 @@ public class CraftTest {
         return craftTorch != null && craftTorch.name.equals("Torch");
     }
 
+    // shaped torch unsuccessful craft (wrong shape)
     public static boolean test10() {
         String[][] grid = { {
                 null, "Coal", null
@@ -208,6 +218,7 @@ public class CraftTest {
         return craftTorch == null;
     }
 
+    // shaped fence unsuccessful craft (wrong item location)
     public static boolean test11() {
         String[][] grid = { {
                 "WoodPlank", "WoodPlank", "WoodPlank"
@@ -222,6 +233,7 @@ public class CraftTest {
         return craftFence == null;
     }
 
+    // shaped fence successful craft
     public static boolean test12() {
         String[][] grid = { {
                 "WoodPlank", "Stick", "WoodPlank"
@@ -236,6 +248,7 @@ public class CraftTest {
         return craftFence != null && craftFence.name.equals("Fence");
     }
 
+    // shaped fence successful craft (non standard location)
     public static boolean test13() {
         String[][] grid = { {
                 null, null, null
@@ -250,6 +263,7 @@ public class CraftTest {
         return craftFence != null && craftFence.name.equals("Fence");
     }
 
+    // shaped pants successful craft
     public static boolean test14() {
         String[][] grid = { {
                 "Iron", "Iron", "Iron"
@@ -264,6 +278,7 @@ public class CraftTest {
         return craftPants != null && craftPants.name.equals("IronPant");
     }
 
+    // shaped pants unsuccessful craft (extra item)
     public static boolean test15() {
         String[][] grid = { {
                 "Iron", "Iron", "Iron"
